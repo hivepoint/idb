@@ -14,7 +14,7 @@ export interface OpenDBCallbacks<DBTypes extends DBSchema | unknown> {
      * Called if there are older versions of the database open on the origin, so this version cannot
      * open.
      */
-    blocked?(): void;
+    blocked?(request: IDBOpenDBRequest): void;
     /**
      * Called if this connection is blocking a future version of the database from opening.
      */

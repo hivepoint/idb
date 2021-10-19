@@ -20,7 +20,7 @@ function openDB(name, version, { blocked, upgrade, blocking, terminated } = {}) 
         });
     }
     if (blocked)
-        request.addEventListener('blocked', () => blocked());
+        request.addEventListener('blocked', () => blocked(request));
     openPromise
         .then((db) => {
         if (terminated)
